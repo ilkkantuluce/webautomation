@@ -27,6 +27,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   <script src="https://kit.fontawesome.com/3a9d6c04b6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-onboarding">
@@ -204,7 +205,7 @@
       <div class="card bg-white shadow-sm border-0 mb-3 ">
         <div class="card-body">
           <div class="row">
-            <div class="col-12 col-md-6 d-flex align-items-center">
+            <div class="col-12 col-md-5 d-flex align-items-center">
               <div class="extract-details-head d-flex align-items-center">
                 <i class="icon-extract-title mr-2"></i>
                 <h5 class="text-dark mb-0 mr-2">watchnerd.com</h5>
@@ -212,10 +213,10 @@
                 <a href=""><i class="fas fa-pen"></i></a>
               </div>
             </div>
-            <div class="col-12 col-md-6 text-left text-md-right">
+            <div class="col-12 col-md-7 text-left text-md-right">
               <div class="">
                 <a href="" class="btn btn-wauto-solid rounded-5 font-size-14"><span class="material-icons-round font-size-20 mr-1">add_circle_outline</span>New Session</a>
-                <a href="" class="btn btn-outline-secondary d-inline-block font-size-14"><i class="fas fa-clone mr-1"></i>Duplicate</a>
+                <button type="button" class="btn btn-outline-secondary d-inline-block font-size-14" data-toggle="modal" data-target="#duplicate"><i class="fas fa-clone mr-1"></i>Duplicate</button>
                 <div class="dropdown d-inline-block">
                   <a href="" class="btn btn-outline-secondary dropdown-toggle font-size-14" data-toggle="dropdown"><span class="material-icons-round font-size-20 mr-1">stop_circle</span>Stop All</a>
                   <div class="dropdown-menu">
@@ -228,6 +229,30 @@
                   <div class="dropdown-menu">
                     <a class="dropdown-item font-size-14" href="#"><span class="material-icons-round font-size-20 mr-1">add_circle_outline</span>Add To Project</a>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Existing Extractors Modal -->
+          <div class="modal fade" id="duplicate">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h5 class="modal-title">Duplicate the extractor</h5>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <p class="mb-3 h6">Create a copy of the extractor under a new name. All the settings will be copied over</p>
+                  <div class="form-group">
+                    <input type="name" class="form-control" placeholder="" value="Instagram-scraper">
+                  </div>
+                </div>
+                <div class="modal-footer border-0">
+                  <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">OK</button>
                 </div>
               </div>
             </div>
@@ -497,20 +522,512 @@
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
               <div id="tasks" class="tab-pane fade"><br>
-                <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+
+                <div class="card border mt-2">
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col-md-12">
+                        <h5 class="mb-4 font-weight-bold">Scheduler</h5>
+                        <p class="mb-1 font-weight-bold">Select frequency</p>
+                        <div class="row">
+                          <div class="col-4">
+                            <select id="frequency" class="custom-select mb-1">
+                              <option selected>none</option>
+                              <option value="minutes">Minutes</option>
+                              <option value="hourly">Hourly</option>
+                              <option value="daily">Daily</option>
+                              <option value="weekly">Weekly</option>
+                              <option value="monthly">Monthly</option>
+                              <option value="advanced">Advanced</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div id="minutes" class="hide">
+
+                        </div>
+
+                        <div id="hourly" class="hide">
+                          <div class="row">
+                            <div class="col-2">
+                              <div class="form-group">
+                                <p class="mb-1 mt-3">Every</p>
+                                <div class="d-flex align-items-end">
+                                  <input type="number" class="form-control" placeholder="" value="1">
+                                  <p class="mb-0 ml-1">hrs</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="daily" class="hide">
+                          
+                        </div>
+
+                        <div id="weekly" class="hide">
+                          <div class="row">
+                            <div class="col-12">
+                              <p class="font-size-12">Next: Wed Jul 7 2021 19 25:00</p>
+                              <p class="mb-1 font-weight-bold">Select day</p>
+                              <div class="mb-2">
+                                <p class="badge badge-dark mb-0 p-1">Su</p>
+                                <p class="badge badge-dark mb-0 p-1">Mo</p>
+                                <p class="badge badge-dark mb-0 p-1 bg-main-color">Tu</p>
+                                <p class="badge badge-dark mb-0 p-1">We</p>
+                                <p class="badge badge-dark mb-0 p-1">Th</p>
+                                <p class="badge badge-dark mb-0 p-1">Fr</p>
+                                <p class="badge badge-dark mb-0 p-1">Sa</p>
+                              </div>
+                              <p>Your extractor will run <span class="font-weight-bold">Weekly</span> on <span class="font-weight-bold">Wednesday</span> at <span class="font-weight-bold">19:25</span></p>
+                            
+                              <p class="mb-1 font-weight-bold">Timezone</p>
+                              <div class="row">
+                                <div class="col-4">
+                                  <select class="custom-select mb-4">
+                                    <option value="UTC">UTC</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <p class="font-weight-bold mb-1">Next run at:</p>
+                              <p class="mb-0 font-size-12">2021-07-02 03:11:00 (UTC time zone).</p>
+                              <p class="font-size-12">2021-07-02 04:11:00 (Europe/London time zone).</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="monthly" class="hide">
+                          <div class="row">
+                            <div class="col-12">
+                              <p class="font-size-12">Next: Wed Jul 7 2021 19 25:00</p>
+
+                              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                                <input placeholder="Select date" type="text" id="example" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div id="advanced" class="hide">
+                          <div>
+                            <p class="font-size-12">Next: Wed Jul 7 2021 19 25:00</p>
+                            <p class="mb-1 mt-3 font-weight-bold">Timezone</p>
+                            <div class="form-check d-inline">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                1 min
+                              </label>
+                            </div>
+                            <div class="form-check d-inline ml-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                5 min
+                              </label>
+                            </div>
+                            <div class="form-check d-inline ml-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                              <label class="form-check-label" for="flexRadioDefault3">
+                                10 min
+                              </label>
+                            </div>
+                            <div class="form-check d-inline ml-3">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                              <label class="form-check-label" for="flexRadioDefault4">
+                                30 min
+                              </label>
+                            </div>
+                          </div>
+                          
+                        </div>
+                       
+                      </div>
+                    </div>
+
+                    <a href="" class="btn btn-wauto-blue rounded-5 font-size-14 mr-2"><i class="far fa-clock mr-1"></i>Save Schedule</a>
+                    <a href="" class="btn btn-outline-secondary d-inline-block font-size-14">Cancel</a>
+
+                  </div>
+                </div>
+
+
+
+
+
               </div>
               <div id="integrate" class="tab-pane fade"><br>
-                <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+
+                <div class="card border mt-2">
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <h5 class="mb-3 font-weight-bold">MySQL overview</h5>
+                      </div>
+                      <div class="col-md-6 text-md-right">
+                        <a href="" class="btn btn-outline-primary rounded-5 font-size-14"><span class="material-icons-round font-size-20 mr-1">add_circle_outline</span>Add MySQL Account</a>
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col-md-12">
+
+                        <form action="" class="float-none form-inline">
+                          <p class="mr-auto mb-0">1 result(s).</p>
+                          <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle text-dark bg-white font-size-14 border" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down mr-1" aria-hidden="true"></i>Sort</button>
+                            <div class="dropdown-menu font-size-14">
+                              <a class="dropdown-item" href="#">Newest</a>
+                              <a class="dropdown-item" href="#">Oldest</a>
+                              <a class="dropdown-item" href="#">Most Popular</a>
+                              <a class="dropdown-item" href="#">Less Popular</a>
+                            </div>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="table-responsive mt-2">
+                          <table class="table table-bordered font-size-14 text-left bg-white">
+                            <thead>
+                            <tr class="bg-light text-dark font-size-12">
+                              <th scope="col">Host</th>
+                              <th scope="col">Port</th>
+                              <th scope="col">Database</th>
+                              <th scope="col">Table</th>
+                              <th scope="col">Username</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Extractors</th>
+                              <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> 951.156.236.23</p></td>
+                              <td>3306</td>
+                              <td>webauto_develop</td>
+                              <td></td>
+                              <td>webauto_develop</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test Connection</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> 951.156.236.23</p></td>
+                              <td>3306</td>
+                              <td>webauto_develop</td>
+                              <td></td>
+                              <td>webauto_develop</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test Connection</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> 951.156.236.23</p></td>
+                              <td>3306</td>
+                              <td>webauto_develop</td>
+                              <td></td>
+                              <td>webauto_develop</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test Connection</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+                <div class="card border mt-3">
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <h5 class="mb-3 font-weight-bold">FTP overview</h5>
+                      </div>
+                      <div class="col-md-6 text-md-right">
+                        <a href="" class="btn btn-outline-primary rounded-5 font-size-14"><span class="material-icons-round font-size-20 mr-1">add_circle_outline</span>Add FTP Account</a>
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col-md-12">
+
+                        <form action="" class="float-none form-inline">
+                          <p class="mr-auto mb-0">1 result(s).</p>
+                          <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle text-dark bg-white font-size-14 border" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-sort-amount-down mr-1" aria-hidden="true"></i>Sort</button>
+                            <div class="dropdown-menu font-size-14">
+                              <a class="dropdown-item" href="#">Newest</a>
+                              <a class="dropdown-item" href="#">Oldest</a>
+                              <a class="dropdown-item" href="#">Most Popular</a>
+                              <a class="dropdown-item" href="#">Less Popular</a>
+                            </div>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="table-responsive mt-2">
+                          <table class="table table-bordered font-size-14 text-left bg-white">
+                            <thead>
+                            <tr class="bg-light text-dark font-size-12">
+                              <th scope="col">Username</th>
+                              <th scope="col">Host</th>
+                              <th scope="col">Creation</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Extractors</th>
+                              <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> ftpuser</p></td>
+                              <td>ftp.macompanyname.com</td>
+                              <td>Nov 11, 2021</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> ftpuser</p></td>
+                              <td>ftp.macompanyname.com</td>
+                              <td>Nov 11, 2021</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p class="d-flex align-items-center"><span class="badge badge-secondary d-inline mr-2">10</span> ftpuser</p></td>
+                              <td>ftp.macompanyname.com</td>
+                              <td>Nov 11, 2021</td>
+                              <td><div class="text-success">ENABLED</div></td>
+                              <td>5</td>
+                              <td class="d-flex align-items-center">
+                                <a href="" class="btn btn-outline-secondary px-2 py-1 font-size-14 rounded-5">Test</a>
+                                <a href="" class="btn btn-sm btn-wauto-blue px-2 ml-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                                <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bg-light-gray border rounded p-4 pt-5 pb-5 mt-3 mb-5 d-flex align-items-center">
+                      <h5 class="mb-0 font-weight-bold">To integrate using Zapier</h5>
+                      <a href="" class="btn btn-wauto-solid ml-3 rounded-5 font-size-14">Click here</a>
+                    </div>
+                  </div>
+                </div>
+
+
+
               </div>
               <div id="columns" class="tab-pane fade"><br>
-                <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                <div class="border rounded p-2 mb-4 mr-5 bg-light-gray">
+                  <p class="m-1">There is no custom column names for this extractor yet. You can start saving your own column headings.</p>
+                </div>
+                <div class="table-responsive mt-2">
+                  <table class="table table-bordered font-size-14 text-center">
+                    <thead>
+                    <tr class="bg-light text-dark font-size-12">
+                      <th scope="col">#</th>
+                      <th scope="col" class="text-left">Original column</th>
+                      <th scope="col" class="text-left">Custom column name</th>
+                      <th scope="col" class="text-left">Is unique?</th>
+                      <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td class="text-left">Brand</td>
+                      <td><input type="name" class="form-control" id="custom_column_name" placeholder="" value="Brand"></td>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td class="text-left"><a href="" class="btn btn-sm btn-success px-2 py-1 rounded-5"><i class="fas fa-save mr-1" aria-hidden="true"></i>Save</a></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
               </div>
               <div id="api" class="tab-pane fade"><br>
-                <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                
+                <div class="card border mt-2">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <h6 class="mb-3 font-weight-bold">Create actor</h6>
+                      </div>
+                      <div class="col-md-3">
+                        <a href=""><i class="fas fa-external-link-alt mr-1"></i>View API reference</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-9">
+                        <p>Creates a new actor. The POST payload must be a JSON object with actor properties.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-dark text-white" id="basic-addon1">POST</span>
+                          </div>
+                          <input type="text" class="form-control bg-dark text-white" readonly placeholder="" value="https://api.apify.com/v2/acts?token=e3pMPgyMiDoAqY2qtt7aaFxpG">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <a href="" class="btn btn-outline-secondary font-size-14" data-toggle="dropdown"><i class="fas fa-external-link-alt mr-1"></i>Test Endpoints</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card border mt-4">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <h6 class="mb-3 font-weight-bold">Get list of used actors</h6>
+                      </div>
+                      <div class="col-md-3">
+                        <a href=""><i class="fas fa-external-link-alt mr-1"></i>View API reference</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-9">
+                        <p>Returns a list of all actors that a user created or used, in JSON format.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-dark text-white" id="basic-addon1">Get</span>
+                          </div>
+                          <input type="text" class="form-control bg-dark text-white" readonly placeholder="" value="https://api.apify.com/v2/acts?token=e3pMPgyMiDoAqY2qtt7aaFxpG">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <a href="" class="btn btn-outline-secondary font-size-14" data-toggle="dropdown"><i class="fas fa-external-link-alt mr-1"></i>Test Endpoints</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 font-weight-bold">
+                  <p class="mb-1">Reference:</p>
+                  <div class="d-flex">
+                    <p>- Explore full <a href="">API documentation</a></p>
+                  </div>
+                </div>
+
               </div>
               <div id="advancesettings" class="tab-pane fade"><br>
                 <h3>Menu 2</h3>
@@ -523,6 +1040,7 @@
     </section>
   </div>
 </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 </body>

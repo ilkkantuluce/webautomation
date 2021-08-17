@@ -37,3 +37,48 @@ if(document.getElementById("close-sidebar")){
     document.getElementsByClassName("page-wrapper")[0].classList.toggle("toggled");
   });
 }
+
+
+$("#in_app_extractors_new_session").change(function() {
+  if($(this).prop('checked')) {
+    location.href = 'in-app-extractors-new-session-advanced.html';
+  } else {
+    location.href = 'in-app-extractors-new-session-easy.html';
+  }
+});
+
+
+$('.datepicker').datepicker({
+  inline: true
+});
+
+
+$('#frequency').change(function() {
+  $('.hide').hide();
+
+  if ($(this).val() == 'minutes') {
+    $('#minutes').show();
+  }
+  
+  if ($(this).val() == 'hourly') {
+    $('#hourly').show();
+  }
+  
+  if ($(this).val() == 'daily') {
+    $('#daily').show();
+  }
+
+  if ($(this).val() == 'weekly') {
+    $('#weekly').show();
+  }
+
+  if ($(this).val() == 'monthly') {
+    $('#monthly').show();
+  }
+  
+  if ($(this).val() == 'advanced') {
+    $('#advanced').show();
+  }
+  
+});
+

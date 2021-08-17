@@ -52,6 +52,22 @@ p {
 .color-blue {
   color: var(--secondry-color);
 }
+.border-orange {
+  border-color: var(--main-color);
+  border-width: 2px;
+}
+.bg-blue {
+  background-color: #ECFAFF;
+}
+.bg-light-gray {
+  background-color: #F6F8FA;
+}
+.bg-gray {
+  background-color: #E9ECEF;
+}
+.bg-main-color {
+  background-color: var(--main-color);
+}
 .btn-wauto-solid,
 .btn-wauto-outline,
 .btn-wauto-light,
@@ -580,4 +596,36 @@ p {
   .card-completeprofile{
     margin: 0 auto;
   }
+}
+
+
+.wizard-nav a i {
+  display: none;
+}
+
+.wizard-nav a.checked i {
+  display: inline;
+}
+
+.wizard-nav a.checked span {
+  display: none;
+}
+
+.same-height .card {
+  min-height: 120px;
+  height: 100%;
+}
+
+.stay-bottom-center {
+  position: absolute;
+  left: 50%;
+  transform:translate(-50%, -20px);
+}
+
+.hide {
+  display: none;
+}
+
+.custom-control-label {
+  top: 3px;
 }
