@@ -68,6 +68,12 @@ p {
 .bg-main-color {
   background-color: var(--main-color);
 }
+.bg-blue-color {
+  background-color: var(--secondry-color);
+}
+.bg-light-blue {
+  background-color: #D9F2FB;
+}
 .btn-wauto-solid,
 .btn-wauto-outline,
 .btn-wauto-light,
@@ -209,7 +215,7 @@ p {
   background-color: white;
 }
 .sidebar-wrapper .dropdown-item {
-
+  background-color: white;
 }
 .sidebar-wrapper .dropdown-item:hover {
   background-color: white;

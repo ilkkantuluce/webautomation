@@ -48,6 +48,14 @@ $("#in_app_extractors_new_session").change(function() {
 });
 
 
+
+
+$("#make-it-active").click(function(){
+  $(this).toggleClass("bg-success");
+  $("#make-it-active p").text($("#make-it-active p").text() == 'Active' ? 'Activate New One' : 'Active');
+});
+
+
 $('.datepicker').datepicker({
   inline: true
 });

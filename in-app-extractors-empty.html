@@ -27,6 +27,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   <script src="https://kit.fontawesome.com/3a9d6c04b6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-onboarding">
@@ -45,17 +46,17 @@
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="icon-side-dashboard mr-2"></i>Dashboard</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="icon-side-extractors mr-2"></i>Extractors</a>
-          <div class="dropdown-menu border-0">
-            <a class="dropdown-item" href="#">Projects</a>
+        <li class="nav-item dropdown show">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-expanded="true"><i class="icon-side-extractors mr-2"></i>Extractors</a>
+          <div class="dropdown-menu border-0 show">
+            <a class="dropdown-item active" href="#">Projects</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="icon-side-marketplace mr-2"></i>Marketplace</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"><i class="icon-side-concierge mr-2"></i>Concierge</a>
+          <a class="nav-link" href="#"><i class="icon-side-concierge mr-2"></i>Concierge</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="icon-side-tasks mr-2"></i>Tasks</a>
@@ -106,7 +107,7 @@
   <div class="page-content">
     <header class="border border-top-0 border-right-0 border-left-0 bg-white">
        <nav class="navbar navbar-expand-lg navbar-light">
-        <a href="#" id="close-sidebar" class="close-sidemenu d-flex justify-content-center align-content-between"><i class="material-icons-round">menu</i></a><span class="ml-2">Tasks</span>
+        <a href="#" id="close-sidebar" class="close-sidemenu d-flex justify-content-center align-content-between"><i class="material-icons-round">menu</i></a><span class="ml-2">Extractors</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -136,69 +137,55 @@
         </div>
       </nav>
     </header>
-   
+    <!-- In App Body -->
+    <div class="inner-sidebar">
+      <div class="inner-side-head text-center">
+        <button type="button" class="btn btn-wauto-blue pt-2 p-2 pl-5 pr-5 btn-new"><i class="material-icons-round mr-1">add</i>New Extractor</button>
+      </div>
+      <div class="inner-side-search">
+        <div class="input-group">
+          <input type="text" class="form-control border-right-0 border" placeholder="Search projects..." id="pdesearch" name="pdesearch">
+          <div class="input-group-append">
+            <span class="input-group-text bg-white border-left-0"><i class="fas fa-search"></i></span>
+          </div>
 
-
-    <section class="container-fluid pt-3">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-12 col-md-11">
-
-            <ul class="breadcrumb bg-transparent font-size-14 pl-0">
-              <li class="breadcrumb-item"><a href="#">Concierge</a></li>
-              <li class="breadcrumb-item active">get started</li>
-            </ul>
-
-
-            <div class="text-center">
-              <h3 class="color-blue mb-4">Get started by entering a URL to get data from...</h3>
-
-              <div class="row justify-content-center mb-4">
-                <div class="col-md-4">
-                  <div class="card card-body h-100 border-0 shadow-sm">
-                    <h5 class="mb-3">Standard</h5>
-                    <ul class="ml-auto mr-auto mb-5 text-left">
-                      <li>Get data from any website</li>
-                    </ul>
-                    <h6 class="color-orange mt-auto mb-0">From $20</h6>
-                  </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card card-body h-100 border-0 shadow-sm">
-                  <h5 class="mb-3 color-orange">Log In</h5>
-                    <ul class="ml-auto mr-auto mb-5 text-left">
-                      <li>Get data from any website</li>
-                      <li>Supports site login</li>
-                    </ul>
-                    <h6 class="color-orange mt-auto mb-0">From $150</h6>
-                </div>
-              </div>
-              </div>
-
+          <div class="dropdown float-right ml-1">
+            <button type="button" class="btn dropdown-toggle h-100 text-dark bg-white font-size-14 border" data-toggle="dropdown"><i class="fas fa-sort-amount-down mr-1"></i>Sort</button>
+            <div class="dropdown-menu font-size-14">
+              <a class="dropdown-item" href="#">Newest</a>
+              <a class="dropdown-item" href="#">Oldest</a>
+              <a class="dropdown-item" href="#">Most Popular</a>
+              <a class="dropdown-item" href="#">Less Popular</a>
             </div>
-
-
-            <div class="input-group mb-5">
-              <input type="text" class="form-control pde-search-input pl-4 pb-3 pt-3 h-100" placeholder="Enter the target website's data URL">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary btn-wauto-solid rounded-right rounded-right pl-5 pr-5" type="button">Start</button>
-              </div>
-            </div>
-
-            <div class="col-md-10">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel auctor lacus, vitae consequat dui. Praesent luctus leo in malesuada luctus. Suspendisse nec turpis non nisi rutrum dictum at et ipsum. Duis sodales neque eget urna convallis varius.</p>
-            </div>
+          </div>
+        </div>
         
-       
+      </div>
+      <div class="inner-side-list mt-2">
+        <ul class="list-unstyled font-size-14">
+        </ul>
+      </div>
+ 
+    </div>
+    <section class="container-fluid beside-inner-sidebar">
+      <ul class="breadcrumb bg-transparent font-size-14 pl-0">
+        <li class="breadcrumb-item"><a href="#">Extractors</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+      </ul>
+      
+          
+      <div class="row">
+        <div class="col-md-12">
+          <div class="body-content-empty text-center">
+            <img src="img/img-inapp-start-empty.png" alt="">
+            <p class="mt-3 font-size-16 font-weight-bold">Create a project to group your extractors in a single view</p>
+            <a href="#" class="btn btn-wauto-blue pt-2 p-2 pl-5 pr-5 btn-new"><i class="material-icons-round mr-1">add</i>Create Extractor</a>
           </div>
         </div>
       </div>
+
+
     </section>
-
-
-
-
   </div>
 </div>
   <script src="js/plugins.js"></script>
