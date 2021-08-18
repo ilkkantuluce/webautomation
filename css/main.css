@@ -129,6 +129,11 @@ p {
   box-shadow: none !important;
   color: white;
 }
+.btn-blue-gradient {
+  background: rgb(0,191,255);
+  background: linear-gradient(270deg, rgba(0,191,255,1) 0%, rgba(89,212,253,1) 100%);
+  border: 0px;
+}
 .material-icons,
 .material-icons-round,
 .material-icons-outlined{
