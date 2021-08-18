@@ -517,6 +517,22 @@ p {
 .beside-inner-sidebar{
   padding-left: 315px;
 }
+@media screen and (max-width: 700px){
+  .inner-sidebar {
+    position: relative;
+    width: 100%;
+    top: 0px;
+  }
+  .toggled .inner-sidebar {
+    top: 68px;
+  }
+  .beside-inner-sidebar {
+    padding-left: 15px;
+  }
+  .breadcrumb {
+    justify-content: center;
+  }
+}
 .icon-extract-title{
   width: 24px;
   height: 24px;
