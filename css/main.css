@@ -194,6 +194,14 @@ p {
 }
 .page-wrapper .sidebar-wrapper {
   z-index: 1000;
+}.page-wrapper .sidebar-wrapper a span,
+.page-wrapper .sidebar-wrapper button span,
+.page-wrapper .sidebar-wrapper #close-sidebar {
+  display: none;
+}
+.page-wrapper.toggled .sidebar-wrapper a span,
+.page-wrapper.toggled .sidebar-wrapper button span {
+  display: inline;
 }
 .page-wrapper .sidebar-wrapper a span,
 .page-wrapper .sidebar-wrapper button span {
@@ -231,7 +239,6 @@ p {
 }
 .page-wrapper.toggled .page-content header{
   position: fixed;
-  height: 68px;
   z-index: 800;
   left: 0px;
   width: 100%;
@@ -668,6 +675,12 @@ p {
 @media only screen and (max-width: 600px) {
   .card-completeprofile{
     margin: 0 auto;
+  }
+  .page-wrapper.toggled .page-content, .page-wrapper.toggled .page-content header {
+    padding-left: 50px;
+  }
+  .page-wrapper.toggled .sidebar-wrapper #close-sidebar {
+    display: inline;
   }
 }
 
