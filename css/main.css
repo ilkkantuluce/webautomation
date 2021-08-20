@@ -159,13 +159,31 @@ p {
 }
 /*===== Sidebar ======*/
 .page-wrapper .sidebar-wrapper {
-  width: 250px;
+  width: 50px;
   height: 100%;
   max-height: 100%;
   position: fixed;
   top: 0;
-  left: -300px;
+  left: 0px;
   z-index: 999;
+}
+.page-wrapper .sidebar-wrapper .pl-4 {
+  padding-left: 8.5px !important;
+}
+.page-wrapper .sidebar-wrapper .card-currentplan,
+.page-wrapper .sidebar-wrapper .card-freetrial {
+  display: none;
+}
+.page-wrapper.toggled .sidebar-wrapper .card-currentplan,
+.page-wrapper.toggled .sidebar-wrapper .card-freetrial {
+  display: block;
+}
+.page-wrapper.toggled .sidebar-wrapper .pl-4 {
+  padding-left: 1.5rem!important;
+}
+.page-wrapper .sidebar-wrapper .navbar {
+  flex-direction: column;
+  align-items: end;
 }
 .page-wrapper .sidebar-wrapper {
   -webkit-box-shadow: 0 0 3px rgba(52, 58, 64, 0.15);
@@ -177,16 +195,45 @@ p {
 .page-wrapper .sidebar-wrapper {
   z-index: 1000;
 }
+.page-wrapper .sidebar-wrapper a span,
+.page-wrapper .sidebar-wrapper button span {
+  display: none;
+}
+.page-wrapper .sidebar-wrapper button {
+  padding: 5px;
+}
+.page-wrapper.toggled .sidebar-wrapper button i {
+  margin-right: .25rem!important;
+}
+.page-wrapper .sidebar-wrapper button i {
+  margin-right: 0px !important;
+}
+.page-wrapper .sidebar-wrapper .dropdown-menu {
+  border-width: 1px !important;
+}
+.page-wrapper.toggled .sidebar-wrapper .dropdown-menu {
+  border-width: 0px !important;
+}
+.page-wrapper.toggled .sidebar-wrapper a span,
+.page-wrapper.toggled .sidebar-wrapper button span {
+  display: inline;
+}
+.page-wrapper.toggled .sidebar-wrapper button {
+  padding-right: 25px;
+  padding-left: 25px;
+}
 .page-wrapper.toggled .sidebar-wrapper {
   left: 0;
+  width: 250px;
 }
-.page-wrapper.toggled .page-content {
+.page-wrapper.toggled .page-content, .page-wrapper.toggled .page-content header {
   padding-left: 250px;
 }
 .page-wrapper.toggled .page-content header{
   position: fixed;
   height: 68px;
   z-index: 800;
+  left: 0px;
   width: 100%;
 }
 .page-wrapper.toggled .page-content section{
@@ -195,14 +242,13 @@ p {
 .page-wrapper .page-content {
   display: inline-block;
   width: 100%;
-  padding-left: 0;
+  padding-left: 50px;
   overflow-x: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 #sidebar {
-  overflow: hidden;
-  z-index: 3;
+  z-index: 100000;
 }
 .sidebar-wrapper .nav-item .nav-link,
 .sidebar-wrapper .dropdown-menu .dropdown-item {
@@ -277,7 +323,7 @@ p {
 .card-freetrial,
 .card-currentplan{
   bottom: 10px;
-  position: absolute;
+  /*position: absolute;*/
 }
 .card-freetrial .card{
   border-color: var(--main-color);
