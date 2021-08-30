@@ -127,7 +127,7 @@
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i class="img-profile-avatar mr-1"></i>Victor</a>
+              <a class="nav-link dropdown-toggle text-center" href="#" data-toggle="dropdown"><i class="fas fa-user mr-1"></i>Victor</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">My Profile</a>
                 <a class="dropdown-item" href="#">Billing</a>
@@ -145,59 +145,66 @@
       </nav>
     </header>
     <!-- In App Body -->
-    <div class="inner-sidebar">
-      <div class="inner-side-head text-center">
-        <button type="button" class="btn btn-wauto-blue pt-2 p-2 pl-5 pr-5 btn-new"><i class="material-icons-round mr-1">add</i>New Project</button>
-      </div>
-      <div class="inner-side-search">
-        <div class="input-group">
-          <input type="text" class="form-control border-right-0 border" placeholder="search extractors" id="pdesearch" name="pdesearch">
-          <div class="input-group-append">
-            <span class="input-group-text bg-white border-left-0"><i class="fas fa-search"></i></span>
-          </div>
-
-          <div class="dropdown float-right ml-1">
-            <button type="button" class="btn dropdown-toggle h-100 text-dark bg-white font-size-14 border" data-toggle="dropdown"><i class="fas fa-sort-amount-down mr-1"></i>Sort</button>
-            <div class="dropdown-menu font-size-14">
-              <a class="dropdown-item" href="#">Newest</a>
-              <a class="dropdown-item" href="#">Oldest</a>
-              <a class="dropdown-item" href="#">Most Popular</a>
-              <a class="dropdown-item" href="#">Less Popular</a>
+    <div class="sidebar-reverse">
+      <div class="inner-sidebar">
+        <div class="inner-side-head text-center">
+          <button type="button" class="btn btn-wauto-blue m-auto pt-2 p-2 pl-5 pr-5 d-flex align-items-center text-nowrap btn-new"><i class="material-icons-round mr-1">add</i>New Project</button>
+        </div>
+        <div class="inner-side-search">
+          <div class="input-group">
+            <input type="text" class="form-control border-right-0 border" placeholder="search extractors" id="pdesearch" name="pdesearch">
+            <div class="input-group-append">
+              <span class="input-group-text bg-white border-left-0"><i class="fas fa-search"></i></span>
+            </div>
+  
+            <div class="dropdown float-right ml-1">
+              <button type="button" class="btn dropdown-toggle h-100 text-dark bg-white font-size-14 border" data-toggle="dropdown"><i class="fas fa-sort-amount-down mr-1"></i>Sort</button>
+              <div class="dropdown-menu font-size-14">
+                <a class="dropdown-item" href="#">Newest</a>
+                <a class="dropdown-item" href="#">Oldest</a>
+                <a class="dropdown-item" href="#">Most Popular</a>
+                <a class="dropdown-item" href="#">Less Popular</a>
+              </div>
             </div>
           </div>
         </div>
-        
-      </div>
 
-      <div class="inner-side-list mt-2">
-        <ul class="list-unstyled font-size-14">
-          <li><a href="">creativefabrica.com</a></li>
-          <li><a href="">watchnerd.com</a></li>
-          <li><a href="">hepsiburada.com</a></li>
-          <li><a href="">amazon.com</a></li>
-          <li><a href="">wikipedia.org</a></li>
-          <li><a href="">amazon.com</a></li>
-          <li><a href="">creativefabrica.com</a></li>
-          <li><a href="">watchnerd.com</a></li>
-          <li><a href="">hepsiburada.com</a></li>
-          <li><a href="">amazon.com</a></li>
-          <li><a href="">wikipedia.org</a></li>
-          <li><a href="">amazon.com</a></li>
+        <div class="inner-side-list mt-2">
+          <div class="inner-side-search">
+            <div class="dropdown">
+              <button type="button" class="btn dropdown-toggle w-100 text-left text-dark bg-white font-size-14 border" data-toggle="dropdown" aria-expanded="true">All Extractors</button>
+              <div class="dropdown-menu font-size-14 w-100 listed-bottom" x-placement="bottom-start">
+                <ul class="list-unstyled font-size-14">
+                  <li><a href="">creativefabrica.com</a></li>
+                  <li><a href="">watchnerd.com</a></li>
+                  <li><a href="">hepsiburada.com</a></li>
+                  <li><a href="">amazon.com</a></li>
+                  <li><a href="">wikipedia.org</a></li>
+                  <li><a href="">amazon.com</a></li>
+                  <li><a href="">creativefabrica.com</a></li>
+                  <li><a href="">watchnerd.com</a></li>
+                  <li><a href="">hepsiburada.com</a></li>
+                  <li><a href="">amazon.com</a></li>
+                  <li><a href="">wikipedia.org</a></li>
+                  <li><a href="">amazon.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+     
+        </div>
+      </div>
+      <div class="beside-inner-sidebar breadcrumb-wrap">
+        <ul class="breadcrumb bg-transparent font-size-14 pl-0 mt-3 mb-3">
+          <li class="breadcrumb-item"><a href="#">Extractors</a></li>
+          <li class="breadcrumb-item active">Projects</li>
         </ul>
       </div>
-
-      <div class="inner-side-list mt-2">
-        <ul class="list-unstyled font-size-14">
-        </ul>
-      </div>
- 
     </div>
+
+
+
     <section class="container-fluid beside-inner-sidebar">
-      <ul class="breadcrumb bg-transparent font-size-14 pl-0">
-        <li class="breadcrumb-item"><a href="#">Extractors</a></li>
-        <li class="breadcrumb-item active">Projects</li>
-      </ul>
-      
           
       <div class="row mb-5">
         <div class="col-md-12">
@@ -219,8 +226,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -229,8 +238,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -239,8 +250,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
 
@@ -273,12 +286,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -296,12 +311,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -319,12 +336,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -342,12 +361,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -365,12 +386,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -388,12 +411,14 @@
                         <td>Jan 31, 2021</td>
                         <td>Not used</td>
                         <td>
-                          <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
-                          <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
-                          <div class="dropdown d-inline-block">
-                            <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item font-size-14" href="#">more</a>
+                          <div class="d-flex">
+                            <a href="" class="btn btn-sm btn-danger px-2 py-1 d-flex align-items-center rounded-5"><i class="fas fa-play mr-1" aria-hidden="true"></i>Run</a>
+                            <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-pen mr-1" aria-hidden="true"></i>Edit</a>
+                            <div class="dropdown d-inline-block ml-2 d-flex align-items-center">
+                              <a href="" class="btn btn-outline-secondary dropdown-toggle px-2 py-1 font-size-14" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-magic mr-1" aria-hidden="true"></i></a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item font-size-14" href="#">more</a>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -410,8 +435,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -420,8 +447,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -430,8 +459,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -440,8 +471,10 @@
                 <td>0</td>
                 <td>Apr 01, 2021</td>
                 <td>
-                  <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 rounded-5">Extractors</a>
-                  <a href="" class="btn btn-sm btn-danger px-2 py-1 rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  <div class="d-flex">
+                    <a href="" class="btn btn-sm btn-wauto-blue px-2 py-1 d-flex align-items-center rounded-5">Extractors</a>
+                    <a href="" class="btn btn-sm btn-danger px-2 py-1 ml-2 d-flex align-items-center rounded-5"><i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Delete</a>
+                  </div>
                 </td>
               </tr>
               

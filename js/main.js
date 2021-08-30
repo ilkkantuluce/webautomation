@@ -33,6 +33,16 @@ $('table').on('scroll', function () {
 
 //App Sidebar
 
+document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
+  
+document.getElementById("open-sidebar").addEventListener("click", function() {
+  document.getElementsByClassName("page-wrapper")[0].classList.toggle("toggled");
+});
+
+document.getElementById("close-sidebar").addEventListener("click", function() {
+  document.getElementsByClassName("page-wrapper")[0].classList.remove("toggled");
+});
+
 if ($(window).width() < 600) {
   document.getElementsByClassName("page-wrapper")[0].classList.remove("toggled");
 
@@ -40,42 +50,12 @@ if ($(window).width() < 600) {
     document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
   });
   
-  document.getElementById("close-sidebar").addEventListener("click", function() {
-    document.getElementsByClassName("page-wrapper")[0].classList.remove("toggled");
-  });
+ 
 }
 else {
-  document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
-  
-  if(document.getElementById("open-sidebar")){
-    document.getElementById("open-sidebar").addEventListener("click", function() {
-      document.getElementsByClassName("page-wrapper")[0].classList.toggle("toggled");
-    });
-  }
+
 }
 
-$(window).resize(function() {
-  if ($(window).width() < 600) {
-    document.getElementsByClassName("page-wrapper")[0].classList.remove("toggled");
-  
-    document.getElementById("open-sidebar").addEventListener("click", function() {
-      document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
-    });
-    
-    document.getElementById("close-sidebar").addEventListener("click", function() {
-      document.getElementsByClassName("page-wrapper")[0].classList.remove("toggled");
-    });
-  }
-  else {
-    document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
-    
-    if(document.getElementById("open-sidebar")){
-      document.getElementById("open-sidebar").addEventListener("click", function() {
-        document.getElementsByClassName("page-wrapper")[0].classList.toggle("toggled");
-      });
-    }
-  }
-});
 
 
 $("#in_app_extractors_new_session").change(function() {
